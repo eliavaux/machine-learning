@@ -1,0 +1,11 @@
+[package]
+name = "machine-learning"
+version = "0.1.0"
+edition = "2021"
+
+
+[dependencies]
+rand = "0.8.5"
+png = "0.17.10"
+serde = { version = "1.0.192", features = ["derive"] }
+serde_json = "1.0.108"
