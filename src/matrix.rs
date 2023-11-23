@@ -101,14 +101,12 @@ impl Matrix {
         "\nMatrix dimensions are incompatible for multiplication");
 
         let mut data = Vec::new();
-        let transposed = self.transpose();
 
         for i in 0..other.cols {
-            for j in 0..transposed.cols {
+            for j in 0..self.data.len() / self.cols {
                 let mut sum = 0.0;
-
                 for k in 0..self.cols {
-                    sum += transposed.data[j * self.cols + k] * other.data[i * self.cols + k];
+                    sum += self.data[j + self.data.len() / self.cols * k] * other.data[i * self.cols + k];
                 }
                 data.push(sum);
             }

@@ -68,9 +68,9 @@ impl Network {
                 println!("Generation {i} of {gens}");
             }
 
-            let range = rand::thread_rng().gen_range(0..59900);
-            let inputs = &inputs[range..range+100];
-            let targets = &targets[range..range+100];
+            let start = rand::thread_rng().gen_range(0..59900);
+            let inputs = &inputs[start..start +100];
+            let targets = &targets[start..start +100];
 
             for j in 0..inputs.len() {
                 let outputs = self.feed_forward(&inputs[j]);
